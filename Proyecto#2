@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            /*
+             Ejercicio 01
+                Una empresa expondrá sus productos en una feria. La empresa considera que el monto total de dinero a invertir estará distribuido de la siguiente manera:
+                Alquiler de espacio en la feria ----> 23%
+                Publicidad ----> 7%
+                Transporte ----> 26%
+                Servicios feriales ----> 12%
+                Decoracion ----> 21%
+                Gastos Varios ----> 11%
+                Dado el monto total de dinero a invertir, diseñar un programa que determine cuánto gastará la empresa en cada rubro.
+            */
+
+            double Alquiler = 0.23;
+            double Publicidad = 0.07;
+            double Transporte = 0.26;
+            double Servicios = 0.12;
+            double Decoracion = 0.21;
+            double GastosVarios = 0.11;
+            Console.WriteLine("Ejercicio #1: Distribuicion de Dinero");
+            Console.WriteLine("Porfavor Ingresa el monto total de dinero a invertir: ");
+            double Dinero = Convert.ToDouble(Console.ReadLine());
+            double AlquilerDinero = Alquiler * Dinero;
+            double PublicidadDinero = Publicidad * Dinero;
+            double TransporteDinero = Transporte * Dinero;
+            double ServiciosDinero = Servicios * Dinero;
+            double DecoracionDinero = Decoracion * Dinero;
+            double GastosVariosDinero = GastosVarios * Dinero;
+            Console.WriteLine($"El dinero distribuido por es:\n Alquiler: {AlquilerDinero} \n Publicidad: {PublicidadDinero} \n Transporte: {TransporteDinero}\n Servicios: {ServiciosDinero}\n Decoracion: {DecoracionDinero}\n Gastos Varios: {GastosVariosDinero}");
+            Console.WriteLine("----------------------------------------------------------");
+
+            /*
+             Ejercicio 02
+                Un padre repartirá una cantidad de dinero entre sus cinco hijos. Cada uno recibirá una cantidad equivalente a:
+                Tamara: 85% del monto recibido por Josué
+                Josué: 27% de la cantidad a repartir
+                Caleb: 23% del monto total recibido entre Josué y Daniel
+                Daniel: 25% de la cantidad a repartir
+                David: lo que queda del dinero a repartir
+            Dada la cantidad de dinero a repartir, desarrolle un programa que determine cuánto de dinero recibirá cada hijo.
+             */
+
+            Console.WriteLine("Ejercicio #2: Distribuicion de Dinero");
+            Console.WriteLine("Ingresa el Dinero que deseas Repartir a tus hijos:");
+            double Dinero1 = Convert.ToDouble(Console.ReadLine());
+            double Josue = 0.27 * Dinero1;
+            double Daniel = 0.25 * Dinero1;
+            double Tamara = Josue * 0.85;
+            double Caleb = 0.23 * (Josue + Daniel);
+            double David = Dinero1 - (Tamara + Josue + Daniel + Caleb);
+            Console.WriteLine($"El dinero repartido por es:\n Tamara: {Tamara} \n Josue: {Josue} \n Caleb: {Caleb}\n Daniel: {Daniel}\n David: {David}");                           
+            Console.WriteLine("----------------------------------------------------------");
+
+            /*
+             Ejercicio 03
+                La municipalidad de Pueblo Libre piensa invertir cierto monto de dinero en la reparación de las pistas en las avenidas principales. 
+                    Cada avenida recibirá un monto equivalente a:
+                Av. La Mar: 35% del monto recibido por Av. Bolivar
+                Av. 28 de Julio: 25% del monto recibido
+                Av. Bolivar: 10% de lo recibido por la Av. 28 de Julio y Av. Clement
+                Av. Clement: 15% del monto recibido
+                Av. Sucre: lo que queda del resto.
+                Dado el monto a invertir, desarrolle un programa que determine cuánto dinero le corresponde a cada avenida. 
+             */
+
+            Console.WriteLine("Ejercicio #3: Distribuicion de Dinero a Provincias");
+            Console.WriteLine("Ingresa el Dinero que deseas Repartir a las provincias:");
+            double Dinero3 = Convert.ToDouble(Console.ReadLine());
+            double Clement = 0.15 * Dinero3;
+            double Julio = 0.25 * Dinero3;
+            double Bolivar = 0.10 * (Julio + Clement);
+            double Mar = 0.35 * Bolivar;
+            double Sucre = Dinero3 - (Mar + Julio + Bolivar + Clement);
+            Console.WriteLine($"El dinero repartido por es:\n Av. La Mar: {Mar} \n Av. 28 de Julio: {Julio} \n Av. Bolivar: {Bolivar}\n Av. Clement: {Clement}\n Av. Sucre: {Sucre}");
+
+            Console.ReadKey();
+        }
+    }
+}
