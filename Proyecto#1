@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Timers;
+
+namespace Practica
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            /*
+            Ejercicio 01
+            Escribe un programa para hallar el perímetro de un rectángulo de base 5 y altura 8.
+
+            Solucion Ejercicio #1:
+            Area y Perimetro
+            */
+
+            Console.WriteLine("Ejercicio del Area y Perimetro de un Rectangulo");//Titulo del primer trabajo
+            Console.WriteLine("Por favor ingrese el primer lado del rectángulo: ");
+            double num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Por favor ingrese el Segundo lado del rectangulo: ");
+            double num2 = Convert.ToInt32(Console.ReadLine());
+
+            double Perimetro = num1 + num1 + num2 + num2;
+
+            double Area = num1 * num2;
+
+            Console.WriteLine($"El perimetro del Rectangulo es: {Perimetro}");
+            Console.WriteLine($"El area del Rectangulo es: {Area}");
+
+            Console.WriteLine("----------------------------------------------");
+            /*Ejercicio 02
+            Escriba programa para ingresar 3 notas de un alumno, calcular y mostrar su promedio.
+            
+            Solucion Ejercicio #2:
+             */
+            Console.WriteLine("Ejercicio de las 3 notas de un alumno y calcular su promedio");//Titulo del segundo trabajo
+            Console.WriteLine("Por favor ingresa la primera nota del alumno:");
+            int Num4 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Por favor ingresa la segunda nota del estudiante:");
+            int num5 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Por favor ingresa la tercera nota del estudiante:");
+            int num6 = Convert.ToInt32(Console.ReadLine());
+
+            double Promedio = (Num4 + num5 + num6) / 3;
+            Console.WriteLine($"El promedio del estudiante es: {Promedio}");
+
+            Console.WriteLine("----------------------------------------------");
+            /*Ejercicio 03
+            El papá de María desea saber cuánto será el pago total que deberá realizar a fin de mes por concepto de servicios de su casa (agua, luz, cable, internet, teléfono), siendo los siguientes montos:
+            - Agua S/. 90.00 soles
+            - Luz S/. 65.00 soles
+            - Cable S/. 45.00 soles
+            - Internet S/. 90.00 soles
+            - Teléfono S/. 45.00 soles
+            Realizar un programa que permita obtener el monto total a pagar por concepto de servicios.
+             */
+
+
+            Console.WriteLine("Ejercicio de la cuenta de papá");//Titulo del tercer trabajo
+            double Agua = 90.00;
+            double Luz = 65.00;
+            double Cable = 45.00;
+            double Internet = 90.00;
+            double Telfono = 45.00;
+   
+            double Total = Agua + Luz + Cable + Internet + Telfono;
+            Console.WriteLine($"El Total de la cuenta de servicios es: \n  Agua: {Agua} \n Luz: {Luz} \n Cable: {Cable} \n Internet: {Internet} \n Telfono: {Telfono} \n Total: {Total}");
+
+            Console.ReadKey();
+        }
+
+        
+    }
+}
